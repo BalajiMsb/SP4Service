@@ -8,15 +8,7 @@ namespace Sp4service.service
 {
     public class CurrencyDefinitionService
     {
-        private readonly string _connectionString;
         private readonly CurrencyDefinitionUtil CurrencyDefinitionUtil;
-        string CONNECTION_STRING="Host=172.16.14.17;Port=5432;User ID=allsecit;Password=Allsec@123;Database=payroll_allsec;Pooling=true;";
-        public CurrencyDefinitionService(IConfiguration configuration)
-        {
-            _connectionString = configuration.GetConnectionString("defaultConnection");
-            _connectionString = CONNECTION_STRING;
-        }
-
         public List<CurrencyDefinition> CurrencyDefinitionList()
         {
             try
