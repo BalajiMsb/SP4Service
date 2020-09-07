@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using System;
 using Npgsql;
 using Sp4service.Vo;
-using Sp4service.Common;
 using Sp4service.util;
 namespace Sp4service.Service
 {

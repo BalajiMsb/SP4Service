@@ -1,4 +1,4 @@
-namespace Sp4service.Common
+namespace Sp4service.util.Common
 {
     public class CurrencyDefinitionProperties
     {

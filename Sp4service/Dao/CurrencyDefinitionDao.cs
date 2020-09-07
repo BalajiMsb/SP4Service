@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using Npgsql;
 using Sp4service.Vo;
-using Sp4service.Common;
+using Sp4service.util.Common;
 namespace Sp4service.dao
 {
     public class CurrencyDefinitionDao
