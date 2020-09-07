@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using Npgsql;
 using Sp4service.Vo;
+using Sp4service.Common;
 namespace Sp4service.Dao
 {
     public class CurrencyDefinitionDao
@@ -33,7 +34,7 @@ namespace Sp4service.Dao
                 NpgsqlDataReader reader =cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    //response.Add(MapCurrencyDefValue(reader));
+                    response.Add(MapCurrencyDefValue(reader));
                 }
                 con.Close();
 
@@ -44,6 +45,22 @@ namespace Sp4service.Dao
                 throw ex;
             }
             
+        }
+
+        private CurrencyDefinition MapCurrencyDefValue(NpgsqlDataReader reader)
+        {
+            return new CurrencyDefinition()
+            {
+                CurrencyId = (int)reader[CurrencyDefinitionProperties.CurrencyId],
+                Code = reader[CurrencyDefinitionProperties.CurrencyCode].ToString(),
+                Name = reader[CurrencyDefinitionProperties.Name].ToString(),
+                CountryImage = reader[CurrencyDefinitionProperties.Name].ToString(),
+                Status = reader[CurrencyDefinitionProperties.Status].ToString(),
+                createdBy = reader[CurrencyDefinitionProperties.CreatedBy].ToString(),
+                createdDate = reader[CurrencyDefinitionProperties.CreatedDate].ToString(),
+                updatedBy = reader[CurrencyDefinitionProperties.UpdatedBy].ToString(),
+                updatedDate = reader[CurrencyDefinitionProperties.UpdateDate].ToString()
+            };
         }
     }
 }
