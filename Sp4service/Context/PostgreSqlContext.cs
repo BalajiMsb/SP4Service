@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TestApi.Models;
+using Sp4service.Vo;
 namespace TestApi
 {
     public class PostgreSqlContext:DbContext
