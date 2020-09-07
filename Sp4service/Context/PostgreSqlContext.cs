@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Sp4service.Vo;
-namespace TestApi
+namespace Sp4service.Context
 {
     public class PostgreSqlContext:DbContext
     {
