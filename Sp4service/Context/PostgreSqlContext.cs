@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Sp4service.Vo;
-namespace Sp4service.Context
+using Sp4service.vo;
+namespace Sp4service.context
 {
     public class PostgreSqlContext:DbContext
     {

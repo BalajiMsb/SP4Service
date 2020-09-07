@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Sp4service.Context;
+using Sp4service.context;
 using Sp4service.dao;
 using Npgsql;
 

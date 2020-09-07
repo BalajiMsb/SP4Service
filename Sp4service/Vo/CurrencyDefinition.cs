@@ -1,4 +1,4 @@
-namespace Sp4service.Vo
+namespace Sp4service.vo
 {
     public class CurrencyDefinition
     {

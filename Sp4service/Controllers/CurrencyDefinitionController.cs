@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Sp4service.Service;
-using Sp4service.Vo;
-namespace Sp4service.Controllers
+using Sp4service.service;
+using Sp4service.vo;
+namespace Sp4service.controllers
 {
     [Route("api/[controller]")]
     public class CurrencyDefinitionController
