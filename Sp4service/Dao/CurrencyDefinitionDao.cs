@@ -9,9 +9,6 @@ namespace Sp4service.dao
     public class CurrencyDefinitionDao
     {
         private readonly string _connectionString;
-        //pgsqlDbOperations db = new pgsqlDbOperations();
-        //xmlOperations xml = new xmlOperations();
-        //CommonUtil common=new CommonUtil();
         string CONNECTION_STRING="Host=172.16.14.17;Port=5432;User ID=allsecit;Password=Allsec@123;Database=payroll_allsec;Pooling=true;";
         public CurrencyDefinitionDao(IConfiguration configuration)
         {
