@@ -9,11 +9,11 @@ namespace Sp4service.service
     public class CurrencyDefinitionService
     {
         private readonly CurrencyDefinitionUtil CurrencyDefinitionUtil;
-        public List<CurrencyDefinition> CurrencyDefinitionList()
+        public List<CurrencyDefinition> CurrencyDefinitionSevice()
         {
             try
             {
-                return CurrencyDefinitionUtil.CurrencyDefinitionListSuccess();
+                return CurrencyDefinitionUtil.CurrencyDefinitionListSuccessMessage();
             }
             catch(Exception ex)
             {

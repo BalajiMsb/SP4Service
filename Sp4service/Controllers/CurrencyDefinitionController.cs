@@ -18,7 +18,7 @@ namespace Sp4service.controllers
         [HttpGet("list")]
         public List<CurrencyDefinition> Get()
         {
-            return CurrencyDefinitionService.CurrencyDefinitionList();
+            return CurrencyDefinitionService.CurrencyDefinitionSevice();
         }
     }
 }
