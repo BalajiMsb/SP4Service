@@ -2,23 +2,23 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Sp4service.dao;
+using Sp4service.Service;
 using Sp4service.Vo;
 namespace Sp4service.Controllers
 {
     [Route("api/[controller]")]
     public class CurrencyDefinitionController
     {
-        private readonly CurrencyDefinitionDao CurrencyDefinitionDao;
-        public CurrencyDefinitionController(CurrencyDefinitionDao dataAccessProvider)
+        private readonly CurrencyDefinitionService CurrencyDefinitionService;
+        public CurrencyDefinitionController(CurrencyDefinitionService dataAccessProvider)
         {
-            CurrencyDefinitionDao = dataAccessProvider;
+            CurrencyDefinitionService = dataAccessProvider;
         }
         
         [HttpGet("list")]
         public List<CurrencyDefinition> Get()
         {
-            return CurrencyDefinitionDao.CurrencyDefinitionList();
+            return CurrencyDefinitionService.CurrencyDefinitionList();
         }
     }
 }

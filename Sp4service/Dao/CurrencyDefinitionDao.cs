@@ -16,7 +16,7 @@ namespace Sp4service.dao
             _connectionString = CONNECTION_STRING;
         }
 
-        public List<CurrencyDefinition> CurrencyDefinitionList()
+        public List<CurrencyDefinition> CurrencyDefinitionListSuccess()
         {
             try
             {
