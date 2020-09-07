@@ -4,7 +4,7 @@ using System;
 using Npgsql;
 using Sp4service.Vo;
 using Sp4service.Common;
-namespace Sp4service.Dao
+namespace Sp4service.dao
 {
     public class CurrencyDefinitionDao
     {

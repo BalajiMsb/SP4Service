@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Sp4service.Context;
-using Sp4service.Dao;
+using Sp4service.dao;
 using Npgsql;
 
 namespace Sp4service
