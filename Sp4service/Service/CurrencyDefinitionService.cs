@@ -8,7 +8,7 @@ namespace Sp4service.service
 {
     public class CurrencyDefinitionService
     {
-        private readonly CurrencyDefinitionUtil CurrencyDefinitionUtil;
+        private readonly CurrencyDefinitionUtil CurrencyDefinitionUtil=null;
         public List<CurrencyDefinition> CurrencyDefinitionSevice()
         {
             try
