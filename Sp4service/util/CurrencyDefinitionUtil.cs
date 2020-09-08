@@ -8,12 +8,13 @@ namespace Sp4service.util
 {
     public class CurrencyDefinitionUtil
     {
-        private readonly CurrencyDefinitionDao CurrencyDefinitionDao;
+        private readonly CurrencyDefinitionDao CurrencyDefinitionDao=null;
         public List<CurrencyDefinition> CurrencyDefinitionListSuccessMessage()
         {
             try
             {
-               return CurrencyDefinitionDao.getCurrencyDefinitionList();
+               List<CurrencyDefinition> List= CurrencyDefinitionDao.getCurrencyDefinitionList();
+               return List;
             }
             catch(Exception ex)
             {

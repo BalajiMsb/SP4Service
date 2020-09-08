@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\Sp4service.csproj": {}
+    "C:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\Sp4service.csproj": {}
   },
   "projects": {
-    "c:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\Sp4service.csproj": {
+    "C:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\Sp4service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\Sp4service.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\Sp4service.csproj",
         "projectName": "Sp4service",
-        "projectPath": "c:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\Sp4service.csproj",
+        "projectPath": "C:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\Sp4service.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\SP4Service\\Sp4service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
