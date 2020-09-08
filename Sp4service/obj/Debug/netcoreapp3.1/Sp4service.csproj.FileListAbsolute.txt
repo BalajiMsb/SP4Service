@@ -39,3 +39,7 @@ C:\Users\hp\Desktop\SP4Service\Sp4service\obj\Debug\netcoreapp3.1\staticwebasset
 C:\Users\hp\Desktop\SP4Service\Sp4service\obj\Debug\netcoreapp3.1\Sp4service.dll
 C:\Users\hp\Desktop\SP4Service\Sp4service\obj\Debug\netcoreapp3.1\Sp4service.pdb
 C:\Users\hp\Desktop\SP4Service\Sp4service\obj\Debug\netcoreapp3.1\Sp4service.genruntimeconfig.cache
+C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
