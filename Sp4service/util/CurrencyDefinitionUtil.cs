@@ -13,8 +13,8 @@ namespace Sp4service.util
         {
             try
             {
-               List<CurrencyDefinition> List= CurrencyDefinitionDao.getCurrencyDefinitionList();
-               return List;
+               var response =CurrencyDefinitionDao.getCurrencyDefinitionList();
+               return response;
             }
             catch(Exception ex)
             {
