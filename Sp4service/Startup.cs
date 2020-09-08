@@ -1,23 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Sp4service.context;
 using Sp4service.service;
-using Npgsql;
 
 namespace Sp4service
 {
     public class Startup
     {
+        //private MySqlContext MySqlContext { get; set; }
+        internal MySqlContext Db { get; set; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,7 +26,17 @@ namespace Sp4service
             services.AddControllers();
             var sqlConnectionString = Configuration["PostgreSqlConnectionString"];
             services.AddDbContext<PostgreSqlContext>(options => options.UseNpgsql(sqlConnectionString));
-            services.AddTransient<MySqlContext>(_ => new MySqlContext("server=YOUR-MYSQL-ENDPOINT; database=texttasks; uid=YOUR-USER-NAME; pwd=YOUR-PASSWORD;"));
+            services.AddTransient<MySqlContext>(_ => new MySqlContext(Configuration["ConnectionStrings:DefaultConnectionSql"]));
+            // using var cmd = Db.Connection.CreateCommand();
+            // cmd.CommandText = "DELETE FROM `testtable` WHERE `ID` = 1;";
+            // cmd.ExecuteNonQueryAsync();
+            //services.AddDbContext<MySqlContext>(options =>options.UseMySql(Configuration.GetConnectionString("DefaultConnectionSql")));
+            // var cmd = this.MySqlContext.Connection.CreateCommand() as MySqlCommand;
+            // var xmlquery="DELETE FROM testtable WHERE ID='1';";
+            // cmd.CommandText =xmlquery;
+            // cmd.ExecuteNonQueryAsync();
+            // MySqlDataReader reader = cmd.ExecuteReader();
+            // Console.WriteLine(reader);
             services.AddScoped<CurrencyDefinitionService>();
         }
 
