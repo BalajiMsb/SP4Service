@@ -45,6 +45,11 @@ namespace Sp4service.dao
                     var cmd = this.MySqlContext.Connection.CreateCommand() as MySqlCommand;
                     var xmlquery="SELECT * FROM currencyDefinition";
                     cmd.CommandText =xmlquery;
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        response.Add(MapCurrencyDefValue1(reader));
+                    }
                 }
                 return response;
             }
@@ -56,6 +61,22 @@ namespace Sp4service.dao
         }
 
         private CurrencyDefinition MapCurrencyDefValue(NpgsqlDataReader reader)
+        {
+            return new CurrencyDefinition()
+            {
+                CurrencyId = (int)reader[CurrencyDefinitionProperties.CurrencyId],
+                Code = reader[CurrencyDefinitionProperties.CurrencyCode].ToString(),
+                Name = reader[CurrencyDefinitionProperties.Name].ToString(),
+                CountryImage = reader[CurrencyDefinitionProperties.Name].ToString(),
+                Status = reader[CurrencyDefinitionProperties.Status].ToString(),
+                createdBy = reader[CurrencyDefinitionProperties.CreatedBy].ToString(),
+                createdDate = reader[CurrencyDefinitionProperties.CreatedDate].ToString(),
+                updatedBy = reader[CurrencyDefinitionProperties.UpdatedBy].ToString(),
+                updatedDate = reader[CurrencyDefinitionProperties.UpdateDate].ToString()
+            };
+        }
+
+        private CurrencyDefinition MapCurrencyDefValue1(MySqlDataReader reader)
         {
             return new CurrencyDefinition()
             {
