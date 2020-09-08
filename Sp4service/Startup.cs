@@ -31,6 +31,7 @@ namespace Sp4service
             services.AddControllers();
             var sqlConnectionString = Configuration["PostgreSqlConnectionString"];
             services.AddDbContext<PostgreSqlContext>(options => options.UseNpgsql(sqlConnectionString));
+            services.AddTransient<MySqlContext>(_ => new MySqlContext("server=YOUR-MYSQL-ENDPOINT; database=texttasks; uid=YOUR-USER-NAME; pwd=YOUR-PASSWORD;"));
             services.AddScoped<CurrencyDefinitionService>();
         }
 
