@@ -13,7 +13,8 @@ namespace Sp4service.service
         {
             try
             {
-                return CurrencyDefinitionUtil.CurrencyDefinitionListSuccessMessage();
+                List<CurrencyDefinition> List= CurrencyDefinitionUtil.CurrencyDefinitionListSuccessMessage();
+                return List;
             }
             catch(Exception ex)
             {

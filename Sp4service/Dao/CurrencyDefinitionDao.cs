@@ -20,11 +20,12 @@ namespace Sp4service.dao
 
         public List<CurrencyDefinition> getCurrencyDefinitionList()
         {
+            Console.WriteLine("here");
             try
             {
+                var sqls="Mysql";
                 var response = new List<CurrencyDefinition>();
-                var sql="postgresql";
-                if(sql == "postgresql"){
+                if(sqls == "postgresql"){
                     var cs =CONNECTION_STRING_POSTGRESQL;
                     using var con = new NpgsqlConnection(cs);
                     con.Open();
