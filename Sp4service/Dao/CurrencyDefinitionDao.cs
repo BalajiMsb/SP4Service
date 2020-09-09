@@ -4,28 +4,28 @@ using System;
 using Npgsql;
 using Sp4service.vo;
 using Sp4service.util.Common;
+using MySql.Data.MySqlClient;
 namespace Sp4service.dao
 {
     public class CurrencyDefinitionDao
     {
         private readonly string _connectionString;
 
-        string CONNECTION_STRING="Host=172.16.14.17;Port=5432;User ID=allsecit;Password=Allsec@123;Database=payroll_allsec;Pooling=true;";
+        string CONNECTION_STRING_POSTGRESQL=ServiceNameConstants.CONNECTION_STRING_POSTGRESQL;
         public CurrencyDefinitionDao(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("defaultConnection");
-            _connectionString = CONNECTION_STRING;
+            _connectionString = CONNECTION_STRING_POSTGRESQL;
         }
 
-        public List<CurrencyDefinition> 
-        getCurrencyDefinitionList()
+        public List<CurrencyDefinition> getCurrencyDefinitionList()
         {
             try
             {
                 var response = new List<CurrencyDefinition>();
                 var sql="postgresql";
                 if(sql == "postgresql"){
-                    var cs =CONNECTION_STRING;
+                    var cs =CONNECTION_STRING_POSTGRESQL;
                     using var con = new NpgsqlConnection(cs);
                     con.Open();
                     var xmlquery="SELECT * FROM currencyDefinition";
@@ -39,14 +39,13 @@ namespace Sp4service.dao
                     }
                     con.Close();
                 }else{
-                    // var cmd = this.MySqlContext.Connection.CreateCommand() as MySqlCommand;
-                    // var xmlquery="SELECT * FROM currencyDefinition";
-                    // cmd.CommandText =xmlquery;
-                    // using (MySqlDataReader reader = cmd.ExecuteReader())
-                    // while (reader.Read())
-                    // {
-                    //     response.Add(MapCurrencyDefValue1(reader));
-                    // }
+                    string MyConnection2 = ServiceNameConstants.CONNECTION_STRING_MYSQL;  
+                    string Query = "DELETE FROM testtable WHERE ID='1';";  
+                    MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);  
+                    MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);  
+                    MySqlDataReader MyReader2;  
+                    MyConn2.Open();  
+                    MyReader2 = MyCommand2.ExecuteReader();
                 }
                 return response;
             }
