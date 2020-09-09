@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Microsoft.Extensions.Configuration;
 using System;
 using Npgsql;
 using Sp4service.vo;
