@@ -4,15 +4,11 @@ using System;
 using Npgsql;
 using Sp4service.vo;
 using Sp4service.util.Common;
-using Sp4service.context;
-using MySql.Data.MySqlClient;
 namespace Sp4service.dao
 {
     public class CurrencyDefinitionDao
     {
         private readonly string _connectionString;
-        private MySqlContext MySqlContext { get; set; }
-        
 
         string CONNECTION_STRING="Host=172.16.14.17;Port=5432;User ID=allsecit;Password=Allsec@123;Database=payroll_allsec;Pooling=true;";
         public CurrencyDefinitionDao(IConfiguration configuration)
@@ -43,14 +39,14 @@ namespace Sp4service.dao
                     }
                     con.Close();
                 }else{
-                    var cmd = this.MySqlContext.Connection.CreateCommand() as MySqlCommand;
-                    var xmlquery="SELECT * FROM currencyDefinition";
-                    cmd.CommandText =xmlquery;
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    while (reader.Read())
-                    {
-                        response.Add(MapCurrencyDefValue1(reader));
-                    }
+                    // var cmd = this.MySqlContext.Connection.CreateCommand() as MySqlCommand;
+                    // var xmlquery="SELECT * FROM currencyDefinition";
+                    // cmd.CommandText =xmlquery;
+                    // using (MySqlDataReader reader = cmd.ExecuteReader())
+                    // while (reader.Read())
+                    // {
+                    //     response.Add(MapCurrencyDefValue1(reader));
+                    // }
                 }
                 return response;
             }
@@ -77,20 +73,20 @@ namespace Sp4service.dao
             };
         }
 
-        private CurrencyDefinition MapCurrencyDefValue1(MySqlDataReader reader)
-        {
-            return new CurrencyDefinition()
-            {
-                CurrencyId = (int)reader[CurrencyDefinitionProperties.CurrencyId],
-                Code = reader[CurrencyDefinitionProperties.CurrencyCode].ToString(),
-                Name = reader[CurrencyDefinitionProperties.Name].ToString(),
-                CountryImage = reader[CurrencyDefinitionProperties.Name].ToString(),
-                Status = reader[CurrencyDefinitionProperties.Status].ToString(),
-                createdBy = reader[CurrencyDefinitionProperties.CreatedBy].ToString(),
-                createdDate = reader[CurrencyDefinitionProperties.CreatedDate].ToString(),
-                updatedBy = reader[CurrencyDefinitionProperties.UpdatedBy].ToString(),
-                updatedDate = reader[CurrencyDefinitionProperties.UpdateDate].ToString()
-            };
-        }
+        // private CurrencyDefinition MapCurrencyDefValue1(MySqlDataReader reader)
+        // {
+        //     return new CurrencyDefinition()
+        //     {
+        //         CurrencyId = (int)reader[CurrencyDefinitionProperties.CurrencyId],
+        //         Code = reader[CurrencyDefinitionProperties.CurrencyCode].ToString(),
+        //         Name = reader[CurrencyDefinitionProperties.Name].ToString(),
+        //         CountryImage = reader[CurrencyDefinitionProperties.Name].ToString(),
+        //         Status = reader[CurrencyDefinitionProperties.Status].ToString(),
+        //         createdBy = reader[CurrencyDefinitionProperties.CreatedBy].ToString(),
+        //         createdDate = reader[CurrencyDefinitionProperties.CreatedDate].ToString(),
+        //         updatedBy = reader[CurrencyDefinitionProperties.UpdatedBy].ToString(),
+        //         updatedDate = reader[CurrencyDefinitionProperties.UpdateDate].ToString()
+        //     };
+        // }
     }
 }

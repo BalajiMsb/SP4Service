@@ -38,21 +38,13 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "MySql.Data": {
+            "MySql.Data.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.10.9, )"
-            },
-            "MySqlConnector": {
-              "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[8.0.20, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[3.1.4, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[3.1.2, )"
             }
           },
           "imports": [
