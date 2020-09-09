@@ -8,7 +8,7 @@ namespace Sp4service.util
 {
     public class CurrencyDefinitionUtil
     {
-        private readonly CurrencyDefinitionDao CurrencyDefinitionDao=null;
+        CurrencyDefinitionDao CurrencyDefinitionDao=new CurrencyDefinitionDao();
         public List<CurrencyDefinition> CurrencyDefinitionListSuccessMessage()
         {
             try

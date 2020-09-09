@@ -12,11 +12,11 @@ namespace Sp4service.dao
         private readonly string _connectionString;
 
         string CONNECTION_STRING_POSTGRESQL=ServiceNameConstants.CONNECTION_STRING_POSTGRESQL;
-        public CurrencyDefinitionDao(IConfiguration configuration)
-        {
-            _connectionString = configuration.GetConnectionString("defaultConnection");
-            _connectionString = CONNECTION_STRING_POSTGRESQL;
-        }
+        // public CurrencyDefinitionDao(IConfiguration configuration)
+        // {
+        //     _connectionString = configuration.GetConnectionString("defaultConnection");
+        //     _connectionString = CONNECTION_STRING_POSTGRESQL;
+        // }
 
         public List<CurrencyDefinition> getCurrencyDefinitionList()
         {

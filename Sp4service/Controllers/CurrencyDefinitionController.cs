@@ -9,7 +9,7 @@ namespace Sp4service.controllers
     [Route("api/[controller]")]
     public class CurrencyDefinitionController
     {
-        private readonly CurrencyDefinitionService CurrencyDefinitionService;
+        CurrencyDefinitionService CurrencyDefinitionService=new CurrencyDefinitionService();
         public CurrencyDefinitionController(CurrencyDefinitionService dataAccessProvider)
         {
             CurrencyDefinitionService = dataAccessProvider;
