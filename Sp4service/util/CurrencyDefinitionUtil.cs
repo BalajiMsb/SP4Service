@@ -13,8 +13,9 @@ namespace Sp4service.util
         {
             try
             {
-               List<CurrencyDefinition> List=CurrencyDefinitionDao.getCurrencyDefinitionList();
-               return List;
+                List<CurrencyDefinition> List=new List<CurrencyDefinition>();
+                List=CurrencyDefinitionDao.getCurrencyDefinitionList();
+                return List;
             }
             catch(Exception ex)
             {
