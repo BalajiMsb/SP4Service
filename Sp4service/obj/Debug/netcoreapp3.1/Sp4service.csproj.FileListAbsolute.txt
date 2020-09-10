@@ -54,3 +54,5 @@ C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\MySql.Data.Ent
 C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
 C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
 C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\hp\Desktop\SP4Service\Sp4service\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -4,11 +4,13 @@ using Npgsql;
 using Sp4service.vo;
 using Sp4service.util.Common;
 using MySql.Data.MySqlClient;
+using AutoMapper;
 namespace Sp4service.dao
 {
     public class CurrencyDefinitionDao
     {
-        private readonly string _connectionString;
+        // private readonly string _connectionString;
+        private readonly IMapper _mapper;
 
         string CONNECTION_STRING_POSTGRESQL=ServiceNameConstants.CONNECTION_STRING_POSTGRESQL;
         // public CurrencyDefinitionDao(IConfiguration configuration)
@@ -33,9 +35,13 @@ namespace Sp4service.dao
                     cmd.Connection = con;
                     cmd.CommandText =xmlquery;
                     NpgsqlDataReader reader =cmd.ExecuteReader();
+                    CurrencyDefinition user = new CurrencyDefinition();
                     while (reader.Read())
                     {
                         response.Add(MapCurrencyDefValue(reader));
+                        // CurrencyDefinition userViewModel = _mapper.Map<CurrencyDefinition>(reader);
+                        // List<CurrencyDefinition> customers = reader.AutoMap<CurrencyDefinition>().ToList();                            
+
                     }
                     con.Close();
                 }else{
